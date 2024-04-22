@@ -58,3 +58,40 @@ php artisan serve
 ```
 This will start the local development server at http://localhost:8000.
 
+
+
+## Features
+The product management system includes the following features:
+
+- View Products
+    - Route: `GET /product`
+    - Description: Displays a list of all products.
+- Create Product
+    - Route: `GET /product/create`
+    - Description: Shows a form to create a new product.
+- Store Product
+    - Route: `POST /product`
+    - Description: Saves the new product to the database.
+- Edit Product
+    - Route: `GET /product/{product}/edit`
+    - Description: Shows a form to edit an existing product.
+- Update Product
+    - Route: `PUT /product/{product}`
+    - Description: Updates the specified product in the database.
+- Delete Product
+    - Route: `DELETE /product/{product}`
+    - Description: Deletes the specified product from the database.
+
+## Testing
+### Running Tests
+To run the tests for this application, use the following command:
+```
+./vendor/bin/phpunit
+```
+### Test Cases
+Here are the descriptions of the test cases included in the ProductTest class:
+- testCreateProduct: Confirms that a product can be created through the web interface and is stored in the database.
+- testUpdateProduct: Checks that an existing product can be updated with new information through the web interface.
+- testDeleteProduct: Ensures that a product can be deleted through the web interface and is removed from the database.
+These tests cover all CRUD operations and ensure that the application behaves as expected when interacting with the database.
+
