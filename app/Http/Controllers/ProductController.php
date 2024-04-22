@@ -34,7 +34,6 @@ class ProductController extends Controller
         return view('products.edit', ['product' => $product]);
     }
 
-    // public function for update
     public function update(Product $product, Request $request){
         $data = $request->validate([
             'name' => 'required',
@@ -46,5 +45,10 @@ class ProductController extends Controller
         $product->update($data);
 
         return redirect(route('product.index'))->with('success', 'Product updated successfully');
+    }
+
+    public function destroy(Product $product){
+        $product->delete();
+        return redirect(route('product.index'))->with('success', 'Product deleted successfully');
     }
 }
