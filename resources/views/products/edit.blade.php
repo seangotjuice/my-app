@@ -8,6 +8,9 @@
 <body>
     <h1>Edit a Product</h1>
     <div>
+        <a href="{{route('product.index')}}">Back to Home Page</a>
+    </div>
+    <div>
         @if($errors->any())
         <ul>
             @foreach($errors->all() as $error)
@@ -38,8 +41,6 @@
         <div>
             <input type="submit" value="Update">
         </div>
-
-
     </form>
 </body>
 </html>

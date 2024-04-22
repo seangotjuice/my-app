@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    //
     public function index(){
         $products = Product::all();
         return view('products.index', ['products' => $products]);
@@ -26,7 +25,6 @@ class ProductController extends Controller
         ]);
 
         $newProduct = Product::create($data);
-
         return redirect(route('product.index'));
     }
 
@@ -43,7 +41,6 @@ class ProductController extends Controller
         ]);
 
         $product->update($data);
-
         return redirect(route('product.index'))->with('success', 'Product updated successfully');
     }
 
